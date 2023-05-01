@@ -132,4 +132,6 @@ footer {
   #privacy-policy a:hover {
 	color: #666;
   }
-  
+  footer a[href="privacy-policy.html"] {
+	color: #fff;
+  }  
