@@ -1,4 +1,3 @@
-// Description: This script is used to show a cookie popup on the website
 // Get the cookie popup element
 const cookiePopup = document.getElementById("cookie-popup");
 
@@ -48,4 +47,4 @@ acceptCookies.addEventListener("click", function () {
 });
 
 // Call the checkCookie function
-checkCookie();
+check

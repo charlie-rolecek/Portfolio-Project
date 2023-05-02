@@ -238,4 +238,44 @@ footer {
 footer a[href="cookie-policy.html"] {
 	color: #fff;
 }
-	
+
+/* Cookie popup styles */
+
+#cookie-popup {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	background-color: #333;
+	color: #fff;
+	padding: 1rem;
+	text-align: center;
+	font-size: 0.8rem;
+	max-width: 100%;
+	height: auto;
+	z-index: 9999;
+  }
+  
+  #cookie-popup a {
+	color: #fff;
+  }
+  
+  #cookie-popup a:hover {
+	color: lightpink;
+	text-decoration: underline;
+  }
+  
+  #accept-cookies {
+	background-color: #fff;
+	color: #333;
+	border: none;
+	padding: 5px 10px;
+	font-size: 0.8rem;
+	cursor: pointer;
+	margin-left: 0.5rem;
+  }
+  
+  #accept-cookies:hover {
+	background-color: lightpink;
+	transition: 0.4s;
+  }
+  
