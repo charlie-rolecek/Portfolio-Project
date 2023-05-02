@@ -1,48 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Cookie Popup Example</title>
-    <style>
-      /* Styles for Cookie Popup */
-      .cookie-popup {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #eee;
-        padding: 20px;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
-      }
-      .cookie-popup p {
-        margin: 0;
-      }
-      .cookie-popup button {
-        background-color: #333;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Cookie Popup -->
-    <div class="cookie-popup" id="cookiePopup">
-      <p>We use cookies to improve your experience on our website. By continuing to browse, you agree to our use of cookies.</p>
-      <button onclick="hideCookiePopup()">Got it!</button>
-    </div>
-
-    <!-- Main Content -->
-    <h1>Welcome to my Website!</h1>
-    <p>This is my website and I'm excited to share my work with you!</p>
-
-    <!-- JavaScript -->
-    <script>
-      // Cookie Popup JavaScript
-      function hideCookiePopup() {
-        document.getElementById("cookiePopup").style.display = "none";
-      }
-    </script>
-  </body>
+<head>
+	<meta charset="UTF-8">
+	<title>Cookie Policy Popup</title>
+	<style>
+		.popup {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			padding: 10px;
+			background-color: #f7f7f7;
+			text-align: center;
+			box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+			z-index: 9999;
+		}
+		.popup p {
+			margin: 0;
+			font-size: 16px;
+			line-height: 1.5;
+		}
+		.popup button {
+			margin: 10px;
+			padding: 5px 10px;
+			background-color: #333;
+			color: #fff;
+			border: none;
+			cursor: pointer;
+			font-size: 16px;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="popup" id="cookie-popup">
+		<p>We use cookies to analyze website traffic and optimize your website experience. By accepting our use of cookies, your data will be aggregated with all other user data.</p>
+		<button onclick="acceptCookies()">Accept</button>
+		<button onclick="rejectCookies()">Reject</button>
+	</div>
+	
+	<script>
+		function acceptCookies() {
+			document.cookie = "cookie_consent=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
+			document.getElementById("cookie-popup").style.display = "none";
+		}
+		
+		function rejectCookies() {
+			document.cookie = "cookie_consent=false; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
+			document.getElementById("cookie-popup").style.display = "none";
+		}
+		
+		if (!document.cookie.match(/^(.*;)?\s*cookie_consent\s*=\s*[^;]+(.*)?$/)) {
+			document.getElementById("cookie-popup").style.display = "block";
+		}
+	</script>
+</body>
 </html>
