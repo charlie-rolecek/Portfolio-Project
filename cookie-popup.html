@@ -1,58 +1,32 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<title>Cookie Policy Popup</title>
-	<style>
-		.popup {
-			position: fixed;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			padding: 10px;
-			background-color: #f7f7f7;
-			text-align: center;
-			box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
-			z-index: 9999;
-		}
-		.popup p {
-			margin: 0;
-			font-size: 16px;
-			line-height: 1.5;
-		}
-		.popup button {
-			margin: 10px;
-			padding: 5px 10px;
-			background-color: #333;
-			color: #fff;
-			border: none;
-			cursor: pointer;
-			font-size: 16px;
-			border-radius: 5px;
-		}
-	</style>
-</head>
-<body>
-	<div class="popup" id="cookie-popup">
-		<p>We use cookies to analyze website traffic and optimize your website experience. By accepting our use of cookies, your data will be aggregated with all other user data.</p>
-		<button onclick="acceptCookies()">Accept</button>
-		<button onclick="rejectCookies()">Reject</button>
-	</div>
-	
-	<script>
-		function acceptCookies() {
-			document.cookie = "cookie_consent=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
-			document.getElementById("cookie-popup").style.display = "none";
-		}
-		
-		function rejectCookies() {
-			document.cookie = "cookie_consent=false; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
-			document.getElementById("cookie-popup").style.display = "none";
-		}
-		
-		if (!document.cookie.match(/^(.*;)?\s*cookie_consent\s*=\s*[^;]+(.*)?$/)) {
-			document.getElementById("cookie-popup").style.display = "block";
-		}
-	</script>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cookie popup test</title>
+    <link rel="stylesheet" href="cookie-popup.css" />
+  </head>
+  <body>
+    <h1>Cookie popup test page</h1>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem
+      dignissimos voluptatibus consequatur quam. Doloremque aliquid cumque
+      aliquam necessitatibus saepe ullam dolor reprehenderit labore dolorem,
+      modi excepturi hic cum fugiat accusamus?
+    </p>
+
+    <div id="cookie-popup">
+      <p>
+        By using this site you agree to the storing of cookies on your device to
+        enhance site navigation and to analyze site usage. Learn more about our
+        <a href="/cookie-policy">cookie policy</a>.
+      </p>
+      <p>
+        <button id="accept-cookies">Accept</button>
+      </p>
+    </div>
+
+    <script src="cookie-popup.js"></script>
+  </body>
 </html>
